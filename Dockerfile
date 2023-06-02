@@ -30,5 +30,5 @@ WORKDIR /content/so-vits-svc
 
 # export ZIP_FILE=so-vits-svc_$(date +"%Y%m%d%H%M%S").zip
 # zip -r $ZIP_FILE logs/ configs/ filelists/ -x "*.pt" "*.pth"
-# zip -j $ZIP_FILE logs/44k/ $(ls logs/44k/G_*.pth | sort -V | tail -n 1)
-# zip -j $ZIP_FILE logs/44k/ $(ls logs/44k/D_*.pth | sort -V | tail -n 1)
+# zip -u $ZIP_FILE $(ls logs/44k/G_*.pth | sort -V | tail -n 1)
+# zip -u $ZIP_FILE $(ls logs/44k/D_*.pth | sort -V | tail -n 1)
