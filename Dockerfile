@@ -27,3 +27,8 @@ WORKDIR /content/so-vits-svc
 # unzip -od / /content/dataset.zip
 # tensorboard --logdir logs/44k --host=0.0.0.0 &
 # python train.py -c "configs/config.json" -m 44k
+
+# export ZIP_FILE=so-vits-svc_$(date +"%Y%m%d%H%M%S").zip
+# zip -r $ZIP_FILE logs/ configs/ filelists/ -x "*.pt" "*.pth"
+# zip -j $ZIP_FILE logs/44k/ $(ls logs/44k/G_*.pth | sort -V | tail -n 1)
+# zip -j $ZIP_FILE logs/44k/ $(ls logs/44k/D_*.pth | sort -V | tail -n 1)
