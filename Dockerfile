@@ -1,6 +1,6 @@
 FROM runpod/pytorch:3.10-2.0.0-117
 
-RUN apt-get update && apt-get -y install vim zip unzip && \
+RUN apt-get update && apt-get -y install vim zip unzip rsync && \
     mkdir /content && git clone https://github.com/svc-develop-team/so-vits-svc /content/so-vits-svc -b 4.1-Stable && cd /content/so-vits-svc && \
   pip uninstall -y torchdata torchtext && \
   pip install --upgrade pip setuptools numpy numba && \
